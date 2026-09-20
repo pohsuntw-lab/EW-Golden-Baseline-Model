@@ -37,7 +37,7 @@ The plugin does not run arbitrary uploaded code. It generates declarative Skill 
 | Skill | Purpose |
 |---|---|
 | `golden-baseline-algorithm-selector` | Select algorithms from process semantics and data conditions. |
-| `golden-baseline-analysis-algorithm-builder` | Create or upgrade a declarative time-series algorithm Skill. |
+| `baseline-analysis-builder` | Create or upgrade a declarative time-series algorithm Skill. |
 
 ### Safety boundary
 
@@ -57,7 +57,7 @@ The plugin does not run arbitrary uploaded code. It generates declarative Skill 
     ├── golden-baseline-algorithm-selector
     │   ├── SKILL.md
     │   └── agents/openai.yaml
-    └── golden-baseline-analysis-algorithm-builder
+    └── baseline-analysis-builder
         ├── SKILL.md
         └── agents/openai.yaml
 ```
@@ -103,7 +103,7 @@ EW Golden Baseline Model 協助工業使用者定義確定性的時序比對方�
 | Skill | 用途 |
 |---|---|
 | `golden-baseline-algorithm-selector` | 依工藝語意與資料條件自動選擇算法。 |
-| `golden-baseline-analysis-algorithm-builder` | 建立或升級宣告式時序分析算法 Skill。 |
+| `baseline-analysis-builder` | 建立或升級宣告式時序分析算法 Skill。 |
 
 ### 安全邊界
 

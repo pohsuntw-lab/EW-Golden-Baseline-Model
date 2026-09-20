@@ -2,6 +2,6 @@ interface:
   display_name: "Algorithm Builder／算法建置"
   short_description: "Build versioned time-series algorithms／建立版本化時序算法"
   brand_color: "#54405C"
-  default_prompt: "Use $golden-baseline-analysis-algorithm-builder to create or upgrade an analysis Skill.／請建立或升級時序分析 Skill。"
+  default_prompt: "Use $baseline-analysis-builder to create or upgrade an analysis Skill.／請建立或升級時序分析 Skill。"
 policy:
   allow_implicit_invocation: true
