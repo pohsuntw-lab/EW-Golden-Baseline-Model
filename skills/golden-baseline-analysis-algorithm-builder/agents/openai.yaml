@@ -1,0 +1,7 @@
+interface:
+  display_name: "時序分析算法建置與升級"
+  short_description: "由自然語言產生可驗證、可版本化的算法 Skill"
+  brand_color: "#B88917"
+  default_prompt: "使用 $golden-baseline-analysis-algorithm-builder，依我的新工藝需求建立或升級時序分析算法 Skill。"
+policy:
+  allow_implicit_invocation: true

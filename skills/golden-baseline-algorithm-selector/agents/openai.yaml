@@ -1,0 +1,8 @@
+interface:
+  display_name: "黃金基線算法選擇"
+  short_description: "依設備與工藝語意自動選擇確定性比對算法"
+  brand_color: "#B88917"
+  default_prompt: "使用 $golden-baseline-algorithm-selector，依我的設備與工藝需求產生專用算法選擇 Skill。"
+policy:
+  allow_implicit_invocation: true
+
