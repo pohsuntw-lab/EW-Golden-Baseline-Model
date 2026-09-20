@@ -1,9 +1,6 @@
 ---
 name: golden-baseline-analysis-algorithm-builder
 description: Create or upgrade a safe declarative time-series analysis algorithm SKILL.md for the Golden Baseline Management System from natural-language equipment, process, signal, and deviation requirements. Use when a new deterministic algorithm or a newer version is needed without asking the user to choose mathematical models.
-metadata:
-  schema_version: golden-baseline-analysis-algorithm/v1
-  skill_role: generator
 ---
 
 # 黃金基線時序分析算法建置器
@@ -72,4 +69,3 @@ metadata:
 ## 最終檢查
 
 輸出前確認 frontmatter、必要章節、穩定算法識別碼、語意版本、確定性計算、品質閘門、三類案例與安全邊界。只輸出完整 `SKILL.md`。
-

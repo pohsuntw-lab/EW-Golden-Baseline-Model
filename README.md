@@ -1,5 +1,9 @@
 # EW Golden Baseline Model
 
+<p align="center">
+  <img src="assets/logo.jpg" alt="Embodied Worker logo／具象職人商標" width="320">
+</p>
+
 Natural-language algorithm selection and versioned time-series analysis Skills for Golden Baseline systems.
 
 ## English
@@ -48,6 +52,7 @@ The plugin does not run arbitrary uploaded code. It generates declarative Skill 
 ```text
 .
 ├── .codex-plugin/plugin.json
+├── assets/logo.jpg
 └── skills
     ├── golden-baseline-algorithm-selector
     │   ├── SKILL.md
@@ -115,4 +120,3 @@ EW Golden Baseline Model 協助工業使用者定義確定性的時序比對方�
 ### 版權
 
 版權所有 © 2026 具象職人股份有限公司。保留所有權利。
-

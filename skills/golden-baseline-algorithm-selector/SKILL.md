@@ -1,9 +1,6 @@
 ---
 name: golden-baseline-algorithm-selector
 description: Select deterministic golden-baseline comparison algorithms and generate a reusable process-selector SKILL.md from a plain-language equipment or process description. Use when users should not need to understand RMSE, correlation, DTW, lag, slope, area, stability, or missing-data methods themselves; do not diagnose equipment faults.
-metadata:
-  schema_version: golden-baseline-algorithm-skill/v1
-  skill_role: generator
 ---
 
 # 黃金基線算法選擇技能產生器
@@ -76,4 +73,3 @@ metadata:
 ## 最終輸出
 
 產生完整的新 `SKILL.md`，不要只提供大綱。若可建立檔案就直接建立；否則只輸出一個從 YAML frontmatter 開始的 Markdown 程式碼區塊。
-
