@@ -14,36 +14,36 @@ EW Golden Baseline Model helps industrial users define deterministic time-series
 
 It provides two Codex Skills:
 
-- **Golden Baseline Algorithm Selector** — converts equipment, process, signal, event, and deviation requirements into a reusable process-specific algorithm-selection Skill.
-- **Golden Baseline Analysis Algorithm Builder** — creates or upgrades a declarative, validated, and versioned time-series analysis algorithm Skill.
+- **Golden Baseline Algorithm Selector** — converts equipment, process, signal, event, and deviation requirements into a reusable policy using only backend-confirmed executable algorithm versions.
+- **Golden Baseline Analysis Algorithm Builder** — creates, upgrades, or repairs a declarative and versioned analysis Skill with a machine-readable Manifest and normal, abnormal, and insufficient-data fixtures.
 
 ### Design principle
 
 > Python computes deterministically, AI explains and configures, and engineers make the decision.
 
-The plugin does not run arbitrary uploaded code. It generates declarative Skill specifications that must still pass the Golden Baseline Management System's schema, compatibility, version, and administrator-review controls.
+The plugin does not run arbitrary uploaded code and never self-certifies an algorithm as executable. It generates declarative candidates that must pass backend schema validation, Manifest compilation, fixed fixtures, version compatibility, and administrator approval.
 
 ### Typical workflow
 
 1. Describe the equipment, process stages, signals, units, event markers, and comparison goal in plain language.
-2. Let the selector determine the smallest suitable set of deterministic algorithms.
-3. Generate a process-specific selector Skill or a new analysis-algorithm Skill.
+2. Let the selector choose the smallest suitable set from the backend's executable algorithm registry.
+3. If a required capability is missing, use the builder to create or upgrade a candidate Skill with a Manifest and three fixture categories.
 4. Upload the generated Markdown to the Golden Baseline Management System.
-5. The system validates the schema, algorithm identity, semantic version, engine API, required sections, and safety boundary.
-6. An administrator installs or upgrades only a compliant candidate.
+5. The backend validates the schema, compiles the Manifest, runs the fixtures, checks version compatibility, and returns actionable errors when revision is required.
+6. Use the builder to repair failed candidates; only backend-passed and administrator-approved versions become executable.
 
 ### Included Skills
 
 | Skill | Purpose |
 |---|---|
-| `golden-baseline-algorithm-selector` | Select algorithms from process semantics and data conditions. |
-| `baseline-analysis-builder` | Create or upgrade a declarative time-series algorithm Skill. |
+| `golden-baseline-algorithm-selector` | Select only executable algorithm versions from process semantics and data conditions. |
+| `baseline-analysis-builder` | Create, upgrade, or repair a declarative algorithm Skill with a Manifest and fixtures. |
 
 ### Safety boundary
 
 - No EDC address, account, password, API key, SUID, or CUID is embedded in this repository.
 - Generated Skills must not contain executable Python, SQL, Shell, JavaScript, credential access, or network operations.
-- Generated algorithms do not become active merely because ChatGPT created them.
+- Generated algorithms do not become active merely because ChatGPT created them; the plugin cannot mark them executable.
 - Production activation remains subject to backend validation and administrator approval.
 - Algorithm results do not replace engineering approval for safety-critical decisions.
 
@@ -59,7 +59,10 @@ The plugin does not run arbitrary uploaded code. It generates declarative Skill 
     │   └── agents/openai.yaml
     └── baseline-analysis-builder
         ├── SKILL.md
-        └── agents/openai.yaml
+        ├── agents/openai.yaml
+        └── references
+            ├── manifest-contract.md
+            └── power-timeseries-example.md
 ```
 
 ### Installation
@@ -80,36 +83,36 @@ EW Golden Baseline Model 協助工業使用者定義確定性的時序比對方�
 
 外掛包含兩個 Codex Skill：
 
-- **黃金基線算法選擇**：把設備、工藝、訊號、事件與偏差需求，轉成可重複使用的工藝專用算法選擇 Skill。
-- **時序分析算法建置與升級**：建立或升級宣告式、可驗證及可版本化的時序分析算法 Skill。
+- **黃金基線算法選擇**：把設備、工藝、訊號、事件與偏差需求，轉成只採用後端確認可執行版本的工藝政策。
+- **時序分析算法建置、升級與修復**：建立、升級或依後端錯誤修復宣告式算法 Skill，並產生機器可讀 Manifest 及正常、異常、資料不足三類固定案例。
 
 ### 設計原則
 
 > Python 負責確定性計算，AI 負責解釋與配置，工程師負責做決定。
 
-此外掛不執行任意上傳程式碼。它只產生宣告式 Skill 規格；產生結果仍須通過黃金基線管理系統的格式、相容性、版本與管理員審核。
+此外掛不執行任意上傳程式碼，也不能自行宣告算法已可執行。它只產生宣告式候選規格；候選版本仍須通過後端格式驗證、Manifest 編譯、固定案例、版本相容及管理員核准。
 
 ### 標準使用流程
 
 1. 使用自然語言描述設備、工藝階段、訊號、單位、事件錨點及比較目的。
-2. 由算法選擇 Skill 判斷最小且適用的確定性算法組合。
-3. 產生工藝專用選擇 Skill，或新的時序分析算法 Skill。
+2. 由算法選擇 Skill 從後端可執行算法登錄表判斷最小且適用的組合。
+3. 如缺少能力，由建置 Skill 產生或升級包含 Manifest 與三類固定案例的候選算法。
 4. 將生成的 Markdown 上傳至黃金基線管理系統。
-5. 系統驗證 schema、算法識別碼、語意版本、引擎 API、必要章節與安全邊界。
-6. 只有符合規範的候選版本才可由管理員安裝或升級。
+5. 後端驗證格式、編譯 Manifest、執行固定案例、檢查版本相容；失敗時回傳可修復的錯誤。
+6. 用建置 Skill 修復候選版本；只有後端通過並由管理員核准的版本才能成為可執行算法。
 
 ### 內含技能
 
 | Skill | 用途 |
 |---|---|
-| `golden-baseline-algorithm-selector` | 依工藝語意與資料條件自動選擇算法。 |
-| `baseline-analysis-builder` | 建立或升級宣告式時序分析算法 Skill。 |
+| `golden-baseline-algorithm-selector` | 依工藝語意與資料條件，只選擇已確認可執行的算法版本。 |
+| `baseline-analysis-builder` | 建立、升級或修復包含 Manifest 與固定案例的宣告式算法 Skill。 |
 
 ### 安全邊界
 
 - Repository 不包含 EDC 位址、帳號、密碼、API Key、SUID 或 CUID。
 - 生成的 Skill 不得包含可執行的 Python、SQL、Shell、JavaScript、憑證存取或網路操作。
-- ChatGPT 產生算法 Skill，不代表算法已經啟用。
+- ChatGPT 產生算法 Skill，不代表算法已經啟用；外掛不能自行標示為可執行。
 - 正式啟用仍須通過後端驗證及管理員核准。
 - 算法結果不能取代安全關鍵工作的工程師判斷。
 

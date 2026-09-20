@@ -1,7 +1,7 @@
 {
   "name": "ew-golden-baseline-model",
-  "version": "0.1.0",
-  "description": "Select and evolve deterministic time-series algorithms for Golden Baseline workflows. 依設備與工藝需求選擇、建立及升級黃金基線時序分析算法。",
+  "version": "0.2.0",
+  "description": "Select executable algorithms and build, test, or repair declarative time-series Skills. 選擇可執行算法，並建立、測試或修復宣告式時序分析 Skill。",
   "author": {
     "name": "Embodied Worker Co., Ltd.／具象職人股份有限公司",
     "url": "https://www.embodiedworker.com"
@@ -14,14 +14,14 @@
   "interface": {
     "displayName": "EW Golden Baseline Model",
     "shortDescription": "Algorithm Skills｜算法技能",
-    "longDescription": "Select deterministic comparison algorithms and generate validated, versioned algorithm Skills from equipment, process, signal, and deviation requirements. 依設備、工藝、訊號與偏差需求選擇確定性算法，並產生符合黃金基線系統規範、可驗證及可版本化的算法 Skill。",
+    "longDescription": "Select only backend-confirmed executable comparison algorithms, or generate and repair versioned algorithm Skills with a machine-readable Manifest and fixed fixtures. 只選擇後端確認可執行的比對算法，或依設備與工藝需求產生、升級及修復包含 Manifest 與固定案例的算法 Skill。",
     "developerName": "Embodied Worker／具象職人",
     "category": "Productivity",
-    "capabilities": ["Algorithm selection", "Skill generation", "Version upgrade"],
+    "capabilities": ["Executable algorithm selection", "Manifest generation", "Fixture design", "Validation repair", "Version upgrade"],
     "defaultPrompt": [
       "Select Golden Baseline algorithms for my equipment and process.／依我的設備與工藝需求選擇黃金基線比對算法。",
-      "Create a time-series analysis algorithm Skill.／幫我新增一個時序數據分析算法 Skill。",
-      "Review and upgrade an existing algorithm Skill.／檢查並升級現有的黃金基線算法 Skill。"
+      "Create a time-series analysis Skill with a compilable Manifest and fixtures.／幫我建立包含可編譯 Manifest 與固定案例的時序分析 Skill。",
+      "Repair an algorithm Skill from backend validation errors.／依後端驗證錯誤修復黃金基線算法 Skill。"
     ],
     "brandColor": "#54405C",
     "composerIcon": "./assets/logo.jpg",
